@@ -1,0 +1,290 @@
+body {
+  font-family: 'Josefin Sans', 'sans-serif';
+}
+.navbar {
+  text-align: center;
+  margin: 3em;
+  display: block;
+}
+
+
+.navmenu {
+  margin: 2%;
+  font-family: 'Josefin Sans', 'sans-serif';
+  text-decoration: none;
+  color: black;
+}
+.navmenu:hover {
+  background-color: yellow;
+  height: 25%;
+}
+
+a.active {
+  background-color: yellow;
+}
+
+.flex-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.flex-container > div {
+  width: 33%;
+  margin: 10px;
+  text-align: center;
+}
+
+#intro {
+  text-align: center;
+  margin-top: 3em;
+}
+
+.name {
+  margin-top: 0.4em;
+  font-size: 3.8em;
+}
+
+.email {
+  margin-top: 1em;
+  background-color: yellow;
+  display: inline-block;
+  font-size: 1em;
+}
+
+.phone {
+  margin-top: 0.5em;
+  background-color: yellow;
+  display: inline-block; 
+  font-size: 1em;
+}
+
+.selfie-image {
+  height: 16em;
+}
+
+#work {
+  text-align: center;
+  margin-top: 5em;
+  display: inline-block;
+}
+
+#post1 {
+  background-color: black;
+  color: white;
+  font-size: 1.6em;
+  display: inline-block;
+}
+
+#post2 {
+  background-color: black;
+  margin-top: 0.1em;
+  color: white;
+  font-size: 1.6em;
+  display: inline-block;
+}
+
+#work-describe {
+  margin-top: 2em;
+  font-size: 1em;
+}
+
+#break {
+  margin: 3em;
+}
+
+#work-des-line {
+  margin-top: -0.7em;
+  font-size: 1em;
+}
+
+.blog-header {
+  text-align: center;
+  text-decoration: underline;
+  font-size: 1.1em;
+}
+
+.footer {
+  margin-top: 2.5em;
+  text-align: center;
+}
+
+#footer-link {
+  margin-right: 0.5em;
+  margin-left: 0.5em;
+  height: 2em;
+}
+
+.previous {
+  background-color: #f1f1f1;
+  color: black;
+}
+
+.next {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.blog-post {
+  text-align: center;
+}
+
+.navigate-post {
+  height: 3em;
+}
+
+.blog-title {
+  font-weight: 700;
+}
+
+.blog-summary {
+  font-size: 0.8em;
+  margin-top: 1em;
+}
+
+.column {
+  float: left;
+  
+}
+
+.left {
+  width: 25%;
+}
+
+.right {
+  width: 25%;
+}
+
+.middle {
+  width: 50%;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.blog {
+  margin-left: 15%;
+  margin-right: 15%;
+}
+
+#blog-link {
+  text-decoration: none;
+  color: black;
+}
+
+
+
+/* Mobile Design */
+@media only screen and (max-width: 600px) {
+
+  .openimage {
+    height: 1.5em;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2%;
+  }
+
+  .closeimage {
+    height: 1em;
+    display: block;
+    margin-top: 0.2em;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .overlay {
+    height: 0%;
+    width: 100%;
+    position: fixed;
+    z-index: 1;
+    background-color: white;
+    background-color: rgba(255,255,255,0.9);
+    overflow-y: hidden;
+    transition: 0.5s;
+    margin: -0.5em;
+    display: block;
+  }
+
+  .overlay-content {
+    position: relative;
+    top: 3%;
+    width: 100%;
+    text-align: center;
+    margin-top: 30px;
+  }
+
+  .overlay a {
+    padding: 8px;
+    text-decoration: none;
+    font-size: 36px;
+    color: black;
+    display: block;
+    transition: 0.3s;
+  }
+
+  .overlay a:hover, overlay a:focus {
+    color: rgba(0,0,0,0.3)
+  }
+
+  .flex-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .flex-container > div {
+    width: 92.5%;
+    text-align: center;
+  }
+
+  #intro {
+    margin: 0em;
+  }
+  
+  #name {
+    margin-top: 0.5em;
+    font-size: 2.8em;
+    text-align: center;
+  }
+  
+  #email, #phone {
+    margin: 0.2em;
+  }
+
+  #work {
+    margin-top: 0.2em;
+  }
+
+  #work-describe {
+    font-size: 0.8em;
+  }
+
+  .blog {
+    margin: 0%;
+  }
+
+  .navigate-post {
+    height: 2em;
+  }
+
+  .left, .right {
+    width: 20%;
+  }
+
+  .middle {
+    width: 60%;
+  }
+
+}
+
+
+@media only screen and (min-width: 601px) {
+  .closebtn, .openbtn {
+    display: none;
+  }
+}

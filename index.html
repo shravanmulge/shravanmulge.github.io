@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>Shravan Mulge - Portfolio</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="/stylesheets/styles.css">
+
+<body>
+  <!-- NAVBAR -->
+  <div class="navbar overlay" id="myNav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"><img src="/images/closemenu.svg" alt="closemenu"
+        class="closeimage"></a>
+
+    <div class="overlay-content">
+      <a href="#" class="navmenu active menu1" id="homie">home</a>
+      <a href="#" class="navmenu menu2" id="blogie">blog</a>
+      <a href="#" class="navmenu menu3" id="designie">designs</a>
+      <a href="#" class="navmenu menu4" id="proj">projects</a>
+    </div>
+
+  </div>
+
+  <span style="font-size:30px;cursor:pointer" onclick="openNav()" class="openbtn"><img src="/images/openmenu.svg"
+      alt="openmenu" class="openimage"></span>
+
+  <!-- Arranging Main Content-->
+  <div class="main-content flex-container">
+
+    <div class="intro" id="intro">
+      <div class="name" id="name">Shravan<br>Mulge</div>
+      <div class="email" id="email">hello@shravanmulge.com</div><br>
+      <div class="phone" id="phone">+91-966-308-7101</div>
+    </div>
+
+    <div class="selfie">
+      <img src="/images/image.svg" alt="selfie" class="selfie-image">
+    </div>
+
+    <div class="work" id="work">
+      <div class="post1" id="post1">UI/UX Designer</div>
+      <div class="post2" id="post2">Full Stack Developer</div>
+      <div class="work-describe" id="work-describe">
+        <p id="work-des-line">I am an experienced</p>
+        <p id="work-des-line">stack developer and UI/UX designer, having</p>
+        <p id="work-des-line">experience across various domains.</p>
+        <p id="work-des-line">Follow my blog to know more about me.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Blog Post Display -->
+  <div class="blog">
+
+    <p class="blog-header">latest on blog</p>
+
+    <div class="blog-post row">
+
+      <span style="cursor: pointer;" class="column left" onclick="navigatePost(-1)"><img src="/images/Previous.svg"
+          alt="previous" class="navigate-post"></span>
+
+      <div class="column middle">
+
+        <div class="blog-title" id="blog-title"><a href="http://www.google.com" target="_blank" id="blog-link"></a>
+        </div>
+        <div class="blog-summary" id="blog-summary"></div>
+
+      </div>
+
+      <span style="cursor: pointer;" class="column right" onclick="navigatePost(1)"><img src="/images/next.svg"
+          alt="next" class="navigate-post"></span>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    <a href="https://www.facebook.com" target="_blank"><img src="/images/facebook.svg" alt="facebook"
+        id="footer-link"></a>
+    <a href="https://www.instagram.com" target="_blank"><img src="/images/instagram.svg" alt="instagram"
+        id="footer-link"></a>
+    <a href="https://www.twitter.com" target="_blank"><img src="/images/twitter.svg" alt="twitter" id="footer-link"></a>
+    <a href="https://www.behance.net" target="_blank"><img src="/images/behance.svg" alt="behance" id="footer-link"></a>
+    <a href="https://www.dribbble.com" target="_blank"><img src="/images/dribble.svg" alt="dribble"
+        id="footer-link"></a>
+    <a href="https://www.github.com" target="_blank"><img src="/images/github.svg" alt="github" id="footer-link"></a>
+    <a href="https://www.linkedin.com" target="_blank"><img src="/images/linkedin.svg" alt="linkedin"
+        id="footer-link"></a>
+  </div>
+
+  <script>
+    var blogPost = [
+      {
+        'title': 'Hosting your Sails.js Application - Heroku',
+        'summary': "Today we're gonna talk about all the things you'll have to do to take the <br>sails.js application you've been developing live. You need to make sure you <br> have the Heroku CLI installed and set up before continuing. Heroku <br> preliminaries... (continue)",
+        'url': "https://www.google.com"
+      },
+
+      {
+        'title': "Top 10 JavaScript Frameworks to Learn in 2020",
+        'summary': "JavaScript is one of the most popular programming language and the lingua franca of the Web. In one of my previous article, I have put JavaScript as the second most in-demand programming language just behind Python...(continue)",
+        'url': "https://www.facebook.com"
+      },
+
+      {
+        'title': "Email Confirmation with React",
+        'summary': "To be able to pull it off we are going to need to wire up a full stack MERN application. And that sounds like a great opportunity to learn about how Mongo, Express, React and Node play well together.",
+        'url': "https://www.instagram.com"
+      },
+
+      {
+        'title': "10 Things Front-End Developers Should Learn in 2020",
+        'summary': "This piece aims to give you some guidance on what you should focus on in 2020 as a front-end developer to level up your game, whether you’re just starting with programming or already have some experience.",
+        'url': "https://www.twitter.com"
+      },
+
+      {
+        'title': "How We Moved From Wordpress to React and Raised $80 Million",
+        'summary': "Culture Trip’s website used to be a WordPress site. Now it’s a flexible, universal (isomorphic) JavaScript App powered by Next.js, React, MobX and Styled-Components on the front-end that uses WordPress as a semi-headless CMS.",
+        'url': "https://www.linkedin.com"
+      }
+    ]
+
+    var outTitle = "";
+    varSummary = ""
+    var i;
+    curIndex = 0;
+    numSummary = 5;
+
+    document.getElementById('blog-link').text = blogPost[curIndex].title
+    document.getElementById('blog-link').href = blogPost[curIndex].url
+    document.getElementById('blog-summary').innerText = blogPost[curIndex].summary
+
+    function navigatePost(event) {
+      curIndex = curIndex + event;
+      if (curIndex > numSummary) {
+        curIndex = 0;
+      }
+      if (curIndex == 0) {
+        curIndex = numSummary;
+
+      }
+      console.log(curIndex)
+      document.getElementById('blog-link').text = blogPost[curIndex - 1].title
+      document.getElementById('blog-link').href = blogPost[curIndex - 1].url
+      document.getElementById('blog-summary').innerText = blogPost[curIndex - 1].summary
+
+    }
+
+    function closeNav() {
+      document.getElementById("myNav").style.height = "0%";
+    }
+
+    function openNav() {
+      document.getElementById("myNav").style.height = "100%";
+    }
+
+  </script>
+
+</body>
+
+</html>
